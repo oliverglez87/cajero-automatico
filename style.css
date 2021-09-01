@@ -1,0 +1,19 @@
+body {
+    width: 100%;
+    background-color: whitesmoke;
+
+}
+
+form {
+    margin: 40px;
+}
+
+.form-control{
+    width: 40%;
+}
+
+#seccionPrincipal{
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
