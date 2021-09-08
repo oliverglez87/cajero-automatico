@@ -10,35 +10,59 @@
 </head>
 
 <body>
-    
+    <div id="imagen"> 
+    <img src="https://cdn.forbes.co/2021/05/Anonymous-1000x600.jpg" alt="anonymous">
+    </div>
+
     <div id= "seccionLogin">
-    <form>
+    <form id="formulario" action="" method="post">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Usuario (E-mail)</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+            <label for="exampleInputEmail1" class="form-label">Usuario (E-mail)</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Recordarme</label>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Recordarme</label>
         </div>
-        <button type="submit" id= "btn-login" class="btn btn-primary">Ingresar</button>
+        <button type="button" id= "btn-login" class="btn btn-primary" onclick="login()">Ingresar</button>
+        <span id="mensaje-error"></span>
     </form>
     </div>
 
     <div id= "seccionPrincipal">
+        <span id="username"></span> 
+        <br>
         <span>Bienvenido a tu cuenta, ¿Qué operación quieres realizar?</span> 
         <br>
 
-        <button type="button" class="btn btn-primary btn-lg">Consultar Saldo</button>
-        <button type="button" class="btn btn-primary btn-lg">Ingresar Monto</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="consultarSaldo()">Consultar Saldo</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="ingresarMonto()">Ingresar Monto</button>
         <button type="button" class="btn btn-primary btn-lg">Retirar Monto</button>
     
     </div>
+
+    <div id= "seccionSaldo"> 
+        <div   div class="alert alert-primary" role="alert">
+        </div>
+</div>
+
+
+<form id="seccionIngresar">
+    <label for="inputSaldo" class="form-label"> Ingresa el monto a depositar: </label>
+    <input name= "deposito" type="number" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <button type="button" class="btn btn-primary btn-lg" onclick="depositar()">Depositar</button>    
+
+    <div id= "alertaNuevoSaldo"> 
+        <div   div class="alert alert-primary" role="alert">
+        </div>
+    </div> 
+</form>
+
 
     <script src="main.js"> </script> 
 </body>

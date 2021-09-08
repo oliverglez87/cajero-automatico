@@ -4,6 +4,10 @@ body {
 
 }
 
+img {
+    width: 40%;
+}
+
 form {
     margin: 40px;
 }
@@ -12,8 +16,26 @@ form {
     width: 40%;
 }
 
+.btn-primary {
+    margin-top: 15px;
+}
+
 #seccionPrincipal{
     width: 90%;
     margin-left: 20px;
     margin-top: 20px;
+}
+
+#seccionSaldo {
+    width: 40%;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+#seccionIngresar {
+    width: 60%;
+    margin-left: 20px;
+    margin-top: 50px;
+
 }
