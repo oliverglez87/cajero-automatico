@@ -11,7 +11,7 @@
 
 <body>
     <div id="imagen"> 
-    <img src="https://cdn.forbes.co/2021/05/Anonymous-1000x600.jpg" alt="anonymous">
+        <img src="https://cdn.forbes.co/2021/05/Anonymous-1000x600.jpg" class="img-fluid" alt="anonymous">
     </div>
 
     <div id= "seccionLogin">
@@ -42,7 +42,7 @@
 
         <button type="button" class="btn btn-primary btn-lg" onclick="consultarSaldo()">Consultar Saldo</button>
         <button type="button" class="btn btn-primary btn-lg" onclick="ingresarMonto()">Ingresar Monto</button>
-        <button type="button" class="btn btn-primary btn-lg">Retirar Monto</button>
+        <button type="button" class="btn btn-primary btn-lg" onclick="retirarMonto()">Retirar Monto</button>
     
     </div>
 
@@ -62,6 +62,20 @@
         </div>
     </div> 
 </form>
+
+
+<form id="seccionRetirar">
+    <label for="inputRetiro" class="form-label"> Ingresa el monto a RETIRAR: </label>
+    <input name= "retiro" type="number" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+    <button type="button" class="btn btn-primary btn-lg" onclick="retirar()">Retirar Monto</button>    
+
+    <div id= "alertaRetiro"> 
+        <div   div class="alert alert-primary" role="alert">
+        </div>
+    </div> 
+</form>
+
+
 
 
     <script src="main.js"> </script> 

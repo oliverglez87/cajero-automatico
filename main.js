@@ -6,12 +6,16 @@ let mensajeError = document.getElementById("mensaje-error");
 let seccionSaldo = document.getElementById("seccionSaldo");
 let seccionIngresar = document.getElementById("seccionIngresar");
 let alertaNuevoSaldo = document.getElementById("alertaNuevoSaldo");
+let seccionRetirar = document.getElementById ("seccionRetirar");
+let alertaRetiro = document.getElementById ("alertaRetiro");
 
 
 seccionPrincipal.hidden = true;
 seccionSaldo.hidden =  true;
 seccionIngresar.hidden = true;
+seccionRetirar.hidden = true;
 alertaNuevoSaldo.hidden = true;
+
 
 var usuarios = [
     {
@@ -64,7 +68,7 @@ for (let i = 0; i < usuarios.length; i++) {
     seccionPrincipal.hidden = false;
     usuarioActual = tmpUsuario;
     console.log(usuarioActual);
-    document.getElementById("username").innerText=usuarioActual.name;
+    document.getElementById("username").innerText=usuarioActual.name.toUpperCase();
     break;
     }else {
         mensajeError.innerText="Usuario y/o Contraseña son incorrectos"
@@ -74,11 +78,16 @@ for (let i = 0; i < usuarios.length; i++) {
 
 function consultarSaldo() {
     seccionSaldo.hidden = false;
+    seccionIngresar.hidden = true;
+    seccionRetirar.hidden = true;
     seccionSaldo.innerText = "El saldo actual de tu cuenta es: " + usuarioActual.saldo;
 }
 
 function ingresarMonto() {
     seccionIngresar.hidden = false;
+    seccionSaldo.hidden = true;
+    seccionRetirar.hidden = true;
+    
     
 }
 
@@ -90,7 +99,31 @@ function depositar() {
     seccionSaldo.hidden = true;
     alertaNuevoSaldo.hidden = false;
 
-    alertaNuevoSaldo.innerText = "Tu nuevo saldo es:" + nuevoSaldo;
+    alertaNuevoSaldo.innerText = "Ingresaste: " + deposito1 + "  Tu nuevo saldo es: " + nuevoSaldo;
 
     // Para modificar el saldo en el arreglo??? --> usuarioActual.splice(3,1, nuevoSaldo);
 }
+
+
+function retirarMonto () {
+    seccionRetirar.hidden = false;
+    seccionSaldo.hidden = true;
+    seccionIngresar.hidden = true;
+    alertaRetiro.hidden = true;
+
+}
+
+
+function retirar() {
+    let retiro = parseInt(seccionRetirar.retiro.value);
+    let nuevoSaldo = (usuarioActual.saldo-retiro);
+
+    alertaRetiro.hidden = false;
+    if(retiro <= usuarioActual.saldo){
+        alertaRetiro.innerText = "Retiraste: " + retiro + " Tu nuevo saldo es: " + nuevoSaldo;
+    }else {
+        alertaRetiro.innerText = "No tienes suficiente saldo para retirar";
+    }
+
+}
+
